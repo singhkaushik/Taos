@@ -366,7 +366,7 @@
           ></textarea
           ><br />
           <div class="btn_p">
-            <input class="button" type="submit" name="submit" value="SUBMIT" />
+            <input class="button" type="button" onclick="sendEmail()" name="submit" value="SUBMIT" />
             <a class="up_arr" href="./index.html"
               ><img src="../Images/up arrow.svg" alt="up arrow"
             /></a>
@@ -434,5 +434,41 @@
       </div>
     </footer>
     <!-- <div class="mid_line"></div> -->
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript">
+        function sendEmail() {
+            var name = $("#name");
+            var email = $("#email");
+            var message = $("#message");
+
+            if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(message)) {
+                $.ajax({
+                   url: 'mail.php',
+                   method: 'POST',
+                   dataType: 'json',
+                   data: {
+                       name: name.val(),
+                       email: email.val(),
+                       message: message.val(),
+                   },
+                   success: function (response) {
+                        // $('#myForm')[0].reset();
+                        // $('.sent-notification').text(response);
+                        console.log(response);
+                   }
+                });
+            }
+        }
+
+        function isNotEmpty(caller) {
+            if (caller.val() == "") {
+                caller.css('border', '1px solid red');
+                return false;
+            } else
+                caller.css('border', '');
+                return true;
+            }
+    </script>
   </body>
 </html>
