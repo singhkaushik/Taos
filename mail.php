@@ -7,11 +7,12 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $email = $_POST['email'];
     $message = htmlentities($_POST['message']);
 
-    $sender_host = "mail.taos.org.in";
+//    $sender_host = "mail.taos.org.in";
+    $sender_host = "smtp.gmail.com";
 
     $sender = "TAOS";
-    $sender_email = "support@taos.org.in";
-    $passwd = '3P~aw9x90';
+    $sender_email = "ghapinku@gmail.com";
+    $passwd = '9069618336Ks';
 
     $receiver_email = "singhkaushik28@gmail.com";
 
