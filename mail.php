@@ -13,7 +13,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $sender_email = "support@taos.org.in";
     $passwd = '3P~aw9x90';
 
-    $receiver_email = "thearsrock1234@gmail.com";
+    $receiver_email = "singhkaushik28@gmail.com";
 
     require_once "PHPMailer/PHPMailer.php";
     require_once "PHPMailer/SMTP.php";
