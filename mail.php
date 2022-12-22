@@ -11,8 +11,8 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
     $sender_host = "smtp.gmail.com";
 
     $sender = "TAOS";
-    $sender_email = "ghapinku@gmail.com";
-    $passwd = '9069618336Ks';
+    $sender_email = "";
+    $passwd = '';
 
     $receiver_email = "singhkaushik28@gmail.com";
 
