@@ -443,7 +443,7 @@
             var email = $("#email");
             var message = $("#message");
 
-            if (isNotEmpty(name) && isNotEmpty(email) && isNotEmpty(message)) {
+            if (isNotEmpty(name) && isValidateEmail(email) && isNotEmpty(message)) {
                 $.ajax({
                    url: 'mail.php',
                    method: 'POST',
