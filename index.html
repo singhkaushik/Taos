@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <!--for font family-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +20,7 @@
   <body>
     <div class="main_header">
       <header class="header">
-        <a href="./index.html"
+        <a href="./index "
           ><img class="logo" src="../Images/taos_logo.png" alt="Logo"
         /></a>
         <input class="side-menu" type="checkbox" id="side-menu" />
@@ -30,14 +31,14 @@
         <nav class="nav">
           <ul class="menu">
             <li>
-              <a href="./pages/projects.html">PROJECTS & EXHIBITIONS</a>
+              <a href="./pages/projects">PROJECTS & EXHIBITIONS</a>
             </li>
-            <li><a href="./pages/programms.html">PROGRAMMES</a></li>
-            <li><a href="./pages/artists.html">ARTISTS</a></li>
-            <li><a href="./pages/impact.html">IMPACT</a></li>
-            <li><a href="./pages/press.html">PRESS</a></li>
-            <li><a href="./pages/supports.html">SUPPORT US</a></li>
-            <li><a href="./pages/team.html">TEAM</a></li>
+            <li><a href="./pages/programms">PROGRAMMES</a></li>
+            <li><a href="./pages/artists ">ARTISTS</a></li>
+            <li><a href="./pages/impact ">IMPACT</a></li>
+            <li><a href="./pages/press ">PRESS</a></li>
+            <li><a href="./pages/supports ">SUPPORT US</a></li>
+            <li><a href="./pages/team ">TEAM</a></li>
           </ul>
         </nav>
       </header>
@@ -95,7 +96,7 @@
         <p>December 11th 2022 - March 31st 2023</p>
       </div>
       <div class="text_middle">
-        <a id="who_put_fire" href="./pages/a_place.html">
+        <a id="who_put_fire" href="./pages/a_place ">
           <div class="a_place_link">
             <h1 class="h1text"><i>'</i> A Place at the Table <i>'</i></h1>
             <p class="near">
@@ -110,7 +111,7 @@
         </a>
       </div>
       <div class="text_middle">
-        <a id="who_put_fire" href="./pages/who_put_the_fire.html">
+        <a id="who_put_fire" href="./pages/who_put_the_fire ">
           <div class="a_place_lin">
             <h1 class="h1text"><i>'</i> who put out the fire? <i>'</i></h1>
             <p class="near"><b>Public Participatory Project</b></p>
@@ -125,7 +126,7 @@
         </a>
       </div>
       <section class="text_middle">
-        <a id="who_put_fire" href="./pages/I_Hear_the_Echo.html">
+        <a id="who_put_fire" href="./pages/I_Hear_the_Echo ">
           <div class="a_place_link p">
             <h1 class="h1text">I Hear the Echo</h1>
             <p class="near"><b>Sound Art Project</b></p>
@@ -366,8 +367,14 @@
           ></textarea
           ><br />
           <div class="btn_p">
-            <input class="button" type="submit" name="submit" value="SUBMIT" />
-            <a class="up_arr" href="./index.html"
+            <input
+              class="button"
+              type="button"
+              onclick="sendEmail()"
+              name="submit"
+              value="SUBMIT"
+            />
+            <a class="up_arr" href="./index "
               ><img src="../Images/up arrow.svg" alt="up arrow"
             /></a>
           </div>

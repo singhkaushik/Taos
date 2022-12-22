@@ -464,6 +464,9 @@
     line-height: 1;
     color: #ffffff;
   }
+  .picture {
+    width: 70%;
+  }
   .footer_text_h {
     font-size: 0.4em;
   }
@@ -491,10 +494,7 @@
   .picture1 {
     width: 100%;
   }
-  .picture {
-    width: 40%;
-    border-radius: 4%;
-  }
+
   .echo_name {
     font-family: "Poppins";
     font-style: normal;
@@ -1093,6 +1093,9 @@
     line-height: 1;
     color: #ffffff;
   }
+  .picture {
+    width: 70%;
+  }
   .footer_text_h {
     font-size: 0.6em;
   }
@@ -1120,10 +1123,7 @@
   .picture1 {
     width: 100%;
   }
-  .picture {
-    width: 50%;
-    border-radius: 4%;
-  }
+
   .echo_name {
     font-family: "Poppins";
     font-style: normal;
@@ -1342,6 +1342,9 @@
   }
   #art_lin table tr td table {
     transform: translate(0%, 0%);
+  }
+  .picture {
+    width: 70%;
   }
   .member1 {
     width: 85px;
@@ -1748,10 +1751,7 @@
   .bio_img {
     text-align: right;
   }
-  .picture {
-    width: 50%;
-    border-radius: 4%;
-  }
+
   .echo_name {
     font-family: "Poppins";
     font-style: normal;
@@ -2354,10 +2354,7 @@
   .bio_img {
     text-align: right;
   }
-  .picture {
-    width: 50%;
-    border-radius: 4%;
-  }
+
   .echo_name {
     font-family: "Poppins";
     font-style: normal;
