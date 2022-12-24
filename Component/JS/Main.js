@@ -14,8 +14,9 @@ function sendEmail() {
         message: message.val(),
       },
       success: function (response) {
-        // $('#myForm')[0].reset();
-        // $('.sent-notification').text(response);
+        // $("#myForm")[0].reset();
+        // $(".sent-notification").text(response);
+        
         console.log(response);
       },
     });

@@ -1,6 +1,6 @@
 <?php
 
-/**
+/* *
  * PHPMailer POP-Before-SMTP Authentication Class.
  * PHP Version 5.5.
  *
@@ -21,7 +21,7 @@
 
 namespace PHPMailer\PHPMailer;
 
-/**
+/* *
  * PHPMailer POP-Before-SMTP Authentication Class.
  * Specifically for PHPMailer to use for RFC1939 POP-before-SMTP authentication.
  * 1) This class does not support APOP authentication.
@@ -41,28 +41,28 @@ namespace PHPMailer\PHPMailer;
  */
 class POP3
 {
-    /**
+    /* *
      * The POP3 PHPMailer Version number.
      *
      * @var string
      */
     const VERSION = '6.7.1';
 
-    /**
+    /* *
      * Default POP3 port number.
      *
      * @var int
      */
     const DEFAULT_PORT = 110;
 
-    /**
+    /* *
      * Default timeout in seconds.
      *
      * @var int
      */
     const DEFAULT_TIMEOUT = 30;
 
-    /**
+    /* *
      * POP3 class debug output mode.
      * Debug output level.
      * Options:
@@ -74,75 +74,75 @@ class POP3
      */
     public $do_debug = self::DEBUG_OFF;
 
-    /**
+    /* *
      * POP3 mail server hostname.
      *
      * @var string
      */
     public $host;
 
-    /**
+    /* *
      * POP3 port number.
      *
      * @var int
      */
     public $port;
 
-    /**
+    /* *
      * POP3 Timeout Value in seconds.
      *
      * @var int
      */
     public $tval;
 
-    /**
+    /* *
      * POP3 username.
      *
      * @var string
      */
     public $username;
 
-    /**
+    /* *
      * POP3 password.
      *
      * @var string
      */
     public $password;
 
-    /**
+    /* *
      * Resource handle for the POP3 connection socket.
      *
      * @var resource
      */
     protected $pop_conn;
 
-    /**
+    /* *
      * Are we connected?
      *
      * @var bool
      */
     protected $connected = false;
 
-    /**
+    /* *
      * Error container.
      *
      * @var array
      */
     protected $errors = [];
 
-    /**
+    /* *
      * Line break constant.
      */
     const LE = "\r\n";
 
-    /**
+    /* *
      * Debug level for no output.
      *
      * @var int
      */
     const DEBUG_OFF = 0;
 
-    /**
+    /* *
      * Debug level to show server -> client messages
      * also shows clients connection errors or errors from server
      *
@@ -150,14 +150,14 @@ class POP3
      */
     const DEBUG_SERVER = 1;
 
-    /**
+    /* *
      * Debug level to show client -> server and server -> client messages.
      *
      * @var int
      */
     const DEBUG_CLIENT = 2;
 
-    /**
+    /* *
      * Simple static wrapper for all-in-one POP before SMTP.
      *
      * @param string   $host        The hostname to connect to
@@ -182,7 +182,7 @@ class POP3
         return $pop->authorise($host, $port, $timeout, $username, $password, $debug_level);
     }
 
-    /**
+    /* *
      * Authenticate with a POP3 server.
      * A connect, login, disconnect sequence
      * appropriate for POP-before SMTP authorisation.
@@ -232,7 +232,7 @@ class POP3
         return false;
     }
 
-    /**
+    /* *
      * Connect to a POP3 server.
      *
      * @param string   $host
@@ -295,7 +295,7 @@ class POP3
         return false;
     }
 
-    /**
+    /* *
      * Log in to the POP3 server.
      * Does not support APOP (RFC 2828, 4949).
      *
@@ -332,7 +332,7 @@ class POP3
         return false;
     }
 
-    /**
+    /* *
      * Disconnect from the POP3 server.
      */
     public function disconnect()
@@ -365,7 +365,7 @@ class POP3
         $this->pop_conn  = false;
     }
 
-    /**
+    /* *
      * Get a response from the POP3 server.
      *
      * @param int $size The maximum number of bytes to retrieve
@@ -382,7 +382,7 @@ class POP3
         return $response;
     }
 
-    /**
+    /* *
      * Send raw data to the POP3 server.
      *
      * @param string $string
@@ -402,7 +402,7 @@ class POP3
         return 0;
     }
 
-    /**
+    /* *
      * Checks the POP3 server response.
      * Looks for for +OK or -ERR.
      *
@@ -421,7 +421,7 @@ class POP3
         return true;
     }
 
-    /**
+    /* *
      * Add an error to the internal error store.
      * Also display debug output if it's enabled.
      *
@@ -439,7 +439,7 @@ class POP3
         }
     }
 
-    /**
+    /* *
      * Get an array of error messages, if any.
      *
      * @return array
@@ -449,7 +449,7 @@ class POP3
         return $this->errors;
     }
 
-    /**
+    /* *
      * POP3 connection error handler.
      *
      * @param int    $errno

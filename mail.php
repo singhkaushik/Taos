@@ -5,47 +5,51 @@ use PHPMailer\PHPMailer\PHPMailer;
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
     $name = stripslashes($_POST['name']);
     $email = $_POST['email'];
-    $usermessage = $_POST['message'];
-    
-    $message ="Name = ". $name . "\r\n  Email = " . $email . "\r\n Message =" . $usermessage; 
-    
-    $subject ="My email subject";
-    $fromname ="My Website Name";
-    $fromemail = 'mail.taos.org.in';  //if u dont have an email create one on your cpanel
-    $mailto = 'singhkaushik28@gmail.com';  //the email which u want to recv this email
-    $content = file_get_contents($fileName);
-    $content = chunk_split(base64_encode($content));
-    // a random hash will be necessary to send mixed content
-    $separator = md5(time());
-    // carriage return type (RFC)
-    $eol = "\r\n";
-    // main header (multipart mandatory)
-    $headers = "From: ".$fromname." <".$fromemail.">" . $eol;
-    $headers .= "MIME-Version: 1.0" . $eol;
-    $headers .= "Content-Type: multipart/mixed; boundary=\"" . $separator . "\"" . $eol;
-    $headers .= "Content-Transfer-Encoding: 7bit" . $eol;
-    $headers .= "This is a MIME encoded message." . $eol;
-    // message
-    $body = "--" . $separator . $eol;
-    $body .= "Content-Type: text/plain; charset=\"iso-8859-1\"" . $eol;
-    $body .= "Content-Transfer-Encoding: 8bit" . $eol;
-    $body .= $message . $eol;
-    // attachment
-    $body .= "--" . $separator . $eol;
-    $body .= "Content-Type: application/octet-stream; name=\"" . $filenameee . "\"" . $eol;
-    $body .= "Content-Transfer-Encoding: base64" . $eol;
-    $body .= "Content-Disposition: attachment" . $eol;
-    $body .= $content . $eol;
-    $body .= "--" . $separator . "--";
-    //SEND Mail
-    if (mail($mailto, $subject, $body, $headers)) {
-        echo "mail send ... OK"; // do what you want after sending the email
-        
+    $message = htmlentities($_POST['message']);
+
+    $sender_host = "ws08.servername.online";
+   // $sender_host = "smtp.gmail.com";
+
+    $sender = "TAOS";
+    $sender_email = "support@taos.org.in";
+    $passwd = '3P~aw9x90';
+
+   // $receiver_email = "singhkaushik28@gmail.com";
+    $receiver_email = "tanya@taos.org.in";
+
+    require_once "PHPMailer/PHPMailer.php";
+    require_once "PHPMailer/SMTP.php";
+    require_once "PHPMailer/Exception.php";
+
+    $mail = new PHPMailer(true);
+
+    //server settings
+    $mail->isSMTP();
+    $mail->Host = $sender_host;
+    $mail->SMTPAuth = true;
+    $mail->Username = $sender_email;
+    $mail->Password = $passwd;
+    $mail->Port = 587;
+    $mail->SMTPSecure = "tls";
+
+    // debug
+    $mail->SMTPDebug = 2;
+
+    //email settings
+    $mail->isHTML(true);
+    $mail->setFrom($sender_email, $sender);
+    $mail->addAddress($receiver_email);
+    $mail->Subject = ("Contact | $name");
+    $mail->Body = "Name:$name <br>Email: $email <br>Message: $message";
+
+    if ($mail->send()) {
+        $status = "success";
+       // $response = "Email is sent!";
         
     } else {
         $status = "failed";
-        $response = "Something is wrong: <br>" . $mail->ErrorInfo;
+       // $response = "Something is wrong: <br>" . $mail->ErrorInfo;
     }
-    exit(json_encode(array("error" => $status, "response" => $response)));
-    
+   // exit(json_encode(array("error" => $status, "response" => $response)));
+    exit($status);
 }

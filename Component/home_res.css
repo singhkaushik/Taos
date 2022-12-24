@@ -57,6 +57,9 @@
     height: 20px;
     margin: 0px;
   }
+  .font {
+    font-size: 5px;
+  }
   /*  */
   #echo_h {
     font-size: 2em;
