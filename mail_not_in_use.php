@@ -1,9 +1,6 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-
-if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
-    $name = stripslashes($_POST['name']);
+     
+    $name = $_POST['name'];
     $email = $_POST['email'];
     $usermessage = $_POST['message'];
     
@@ -43,9 +40,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message']))
         
         
     } else {
-        $status = "failed";
-        $response = "Something is wrong: <br>" . $mail->ErrorInfo;
+        echo "mail send ... ERROR!";
+        print_r( error_get_last() );
     }
-    exit(json_encode(array("error" => $status, "response" => $response)));
-    
-}
